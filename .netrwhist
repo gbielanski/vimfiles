@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/d1/evo1dev/este'
+let g:netrw_dirhist_2='/d1/evo1dev'
+let g:netrw_dirhist_3='/d1/evo1dev/este_platform'
+let g:netrw_dirhist_4='/d1/evo1dev/este_platform/platform'
+let g:netrw_dirhist_5='/d1/evo1dev/este_platform/platform/gtms'
+let g:netrw_dirhist_6='/d1/evo1dev/este_platform/platform/gtms/bin'
+let g:netrw_dirhist_7='/d1/evo1dev/este'

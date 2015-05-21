@@ -1,0 +1,39 @@
+set background=light
+
+if has("syntax")
+
+    if &background == "dark"
+        hi Comment    term=bold      ctermfg=Green  guifg=LightBlue
+        hi Constant   term=underline ctermfg=Blue       guifg=Violet gui=underline
+        hi Identifier term=underline ctermfg=LightCyan  guifg=LightCyan
+        hi Statement  term=bold      ctermfg=Blue     guifg=LightBlue gui=bold
+        hi PreProc    term=underline ctermfg=Blue       guifg=Blue
+        hi Type       term=underline ctermfg=LightGreen guifg=LightGreen gui=bold
+        hi Special    term=bold      ctermfg=LightRed   guifg=Orange  gui=underline
+        "  hi Search     term=bold      ctermfg=LightRed   guifg=Orange  gui=underline
+        hi Search     ctermfg=Black
+    else "&background == "light"
+        hi Comment    ctermfg=Green
+        hi Constant   ctermfg=Cyan
+        hi Identifier ctermfg=Cyan
+        hi Statement  ctermfg=Yellow cterm=bold,underline
+        hi PreProc    ctermfg=Green
+        hi Type       ctermfg=White
+        hi Special    ctermfg=Yellow cterm=bold
+        hi Search     ctermfg=Black
+        hi NonText    ctermfg=Gray
+        hi SpecialKey ctermfg=Gray
+        hi vimCommand ctermfg=80 cterm=bold
+        hi cString    ctermfg=Cyan
+        hi cDefine    ctermfg=212
+        hi cInclude   ctermfg=221
+        hi cIncluded  ctermfg=255
+        hi DiffAdd    cterm=bold ctermbg=17
+        hi DiffDelete cterm=bold ctermbg=17
+        hi DiffChange cterm=bold ctermbg=17
+        hi DiffText   cterm=bold ctermbg=88
+        hi netrwDir   ctermfg=Yellow cterm=bold
+    endif
+
+endif
+

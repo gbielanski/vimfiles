@@ -33,6 +33,7 @@ if has("syntax")
         hi DiffChange cterm=bold ctermbg=17
         hi DiffText   cterm=bold ctermbg=88
         hi netrwDir   ctermfg=Yellow cterm=bold
+        hi Visual     ctermfg=21 cterm=bold
     endif
 
 endif

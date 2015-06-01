@@ -1,0 +1,78 @@
+*helpsvn.txt*   For Vim version 7.4.  Last change: 2015 May 27
+|create_label_process|
+    |find_last_revision|
+    |create_label|
+    |list_labels|
+
+|create_label_without_permision|
+
+|delete_label|
+
+|change_between_labels_process|
+    |last_changed_revision|
+    |diff_between_revisions|
+    |diff_between_label_and_head|
+
+|list_changes|
+    |list_changes_since_date_untill_now|
+    |list_changes_since_revision|
+
+|switch_to_revision|
+
+*create_label_process*
+-------------------------------------------------------------------------------------------
+    *find_last_revision*
+    --------------------------------
+    svn info https://xxsubver/svn/este-src/este/branches/dew_02_00_dev_br
+
+    it can be label instead of branch
+
+    svn info https://xxsubver/svn/este-src/este/tags/lot_dew_este_2_1_34_3_dev 
+
+    *create_label* NOTE: 142735 is an example
+    ---------------------------------
+    svn cp https://xxsubver/svn/este-src/este/branches/dew_02_00_dev_br@142735  https://xxsubver/svn/este-src/este/tags/lot_dew_este_2_1_34_0_dev -m"Label for B34 initial patch"
+
+    *list_labels* 
+    ---------------------------------
+    svn list https://xxsubver/svn/este-src/este/tags/ | grep lot_dew 
+
+    NOTE: Jenkins link for WL
+    http://172.30.184.70/jenkins/view/Sites/view/WestLotto/view/Builds/job/DEW_MR4_ESTE_RELEASE/
+
+*change_between_labels_process*
+-------------------------------------------------------------------------------------------
+    *last_changed_revision*
+    ---------------------------------
+    svn info https://xxsubver/svn/este-src/este/tags/lot_dew_este_2_1_34_3_dev/ |  grep 'Last Changed Rev'
+
+    *diff_between_revisions*
+    ---------------------------------
+    svn log -v -q -r  143468:143681 https://xxsubver/svn/este-src/este/branches/dew_02_00_dev_br
+
+    *diff_between_label_and_head*
+    ---------------------------------
+    svn diff labelPath branchPath
+    svn diff --summarize https://xxsubver/svn/este-src/este/tags/lot_dew_este_2_1_34_3_dev https://xxsubver/svn/este-src/este/branches/dew_02_00_dev_br
+
+*create_label_without_permision*
+-------------------------------------------------------------------------------------------
+gv label -m"ESTE Drop 16: lot_ben_este_01_00_16_00_dev" lot_ben_este_01_00_16_00_dev
+
+*delete_label*
+-------------------------------------------------------------------------------------------
+svn delete ^/este/tags/lot_ben_este_01_00_07_00_dev -m"Removing label"
+
+*list_changes*
+-------------------------------------------------------------------------------------------
+    *list_changes_since_date_untill_now*
+    ---------------------------------
+svn log -r {2015-05-17}:HEAD -v
+
+    *list_changes_since_revision*
+svn log -r 144612:HEAD -v
+
+*switch_to_revision*
+-------------------------------------------------------------------------------------------
+svn switch https://xxsubver/svn/este-src/este/tags/lot_dew_este_2_1_34_3_dev 
+

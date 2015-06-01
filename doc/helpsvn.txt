@@ -19,6 +19,8 @@
 
 |switch_to_revision|
 
+|merge_list_of_revisions|
+
 *create_label_process*
 -------------------------------------------------------------------------------------------
     *find_last_revision*
@@ -76,3 +78,7 @@ svn log -r 144612:HEAD -v
 -------------------------------------------------------------------------------------------
 svn switch https://xxsubver/svn/este-src/este/tags/lot_dew_este_2_1_34_3_dev 
 
+
+*merge_list_of_revisions*
+-------------------------------------------------------------------------------------------
+svn merge -r 144107,144303,144468,144607,144608,144609,144478 https://xxsubver/svn/este-src/este/tags/lot_dew_este_2_1_34_3_dev

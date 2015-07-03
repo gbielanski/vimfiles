@@ -55,6 +55,28 @@ func! Set_number_on_off()
   return
 endfunc
 
+" 020628 I find this a very useful command to use. Use "Make" instead of
+" "make"
+"  Command Make will call make and then cwindow which
+"  opens a 3 line error window if any errors are found.
+"  if no errors, it closes any open cwindow.
+"  command! -nargs=* Make make <args> | cwindow 3
+ command! -nargs=* Make make -j4 -k <args> | cwindow 3
+" use \j ("\" is the standard-<leader>-key) - faster than typing ":Make"
+" "map <Leader>j :Make<CR>
+"
+map <F7> :Make<CR>
+" Commands:
+" copen => open
+" cwin => update
+" cclose => close
+" cl => list errors
+" cl! => list messages
+" cn => next error
+" cp => previous error
+" cold => older list
+" cnew => newer list
+
 map ,v :e ~/.vimrc<CR>
 map ,u :e ~/.user_config<CR>
 map ,s :e ~/.vimsyntax<CR>
